@@ -2,19 +2,9 @@
 
 *April 13, 2026*
 
-The EPA's [Toxics Release Inventory](https://www.epa.gov/toxics-release-inventory-tri-program) tracks how much of each toxic chemical U.S. facilities release into the environment each year. This repo includes a script to download that data for 2020–2024.
+The EPA's [Toxics Release Inventory](https://www.epa.gov/toxics-release-inventory-tri-program) tracks how much of each toxic chemical U.S. facilities release into the environment each year. This repo includes that data for 2020–2024. Each year's data is in a `us_20XX/` folder. The file you want is `US_1a_20XX.txt`.
 
-### Step 1: Download the data
-
-Run the download script first — it will fetch the TRI data files from the EPA website and extract them into `us_20XX/` folders:
-
-```
-python download_data.py
-```
-
-Each year's data will land in a folder like `us_2024/`. The file you want is `US_1a_20XX.txt`.
-
-### Step 2: Load and explore
+### Step 1: Load and explore
 
 These are tab-separated files, not comma-separated — you'll need to tell pandas that. You'll probably also hit an error on your first load attempt. Read the error message carefully: it tells you exactly what's wrong and where. Google the error type with "pandas read_csv" to find the fix.
 
@@ -40,7 +30,7 @@ At least one labeled, titled chart that answers a specific question.
 
 ### If you finish early
 
-Go back to the source. The `download_data.py` script does this for you — but look at what it's doing. Can you extend it to also pull data from years before 2020? Or rewrite it from scratch by scraping the download links directly off [the TRI data page](https://www.epa.gov/toxics-release-inventory-tri-program/tri-basic-plus-data-files-calendar-years-1987-present)?
+Go back to the source. Write a script that fetches the TRI zip files directly from [the TRI data page](https://www.epa.gov/toxics-release-inventory-tri-program/tri-basic-plus-data-files-calendar-years-1987-present), extracts them, and saves the files locally — so that pulling next year's data is a single command rather than a manual download.
 
 ### At the end of class
 
