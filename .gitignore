@@ -1,6 +1,0 @@
-.env
-*.pyc
-__pycache__/
-.ipynb_checkpoints/
-us_20*/
-*.zip
